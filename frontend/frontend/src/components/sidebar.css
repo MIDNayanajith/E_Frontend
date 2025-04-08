@@ -1,6 +1,6 @@
 .sidebar {
   position: fixed;
-  top: 61px;
+  top: 60px;
   left: 0;
   bottom: 0;
   width: 300px;
@@ -11,10 +11,11 @@
   scrollbar-width: thin;
   scrollbar-color: #aab7cf transparent;
   box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
-  /* background-color: #1f2a40; */
-  background-color: #1b2537;
+  /* background-color: #1b2537; */
+  background-color: #2a3447;
   color: white;
-  border-radius: 0 10px 0 0;
+  /* border-radius: 0 10px 0 0; */
+  border-right: 2px solid #384256;
 }
 
 @media (max-width: 1199px) {
@@ -87,8 +88,8 @@
   font-weight: 700;
   color: white;
   transition: 0.3;
-  /* background: #1f2a40; */
-  background: #1b2537;
+  /* background: #1b2537; */
+  background: #2a3447;
   padding: 10px 15px;
   border-radius: 4px;
 }
