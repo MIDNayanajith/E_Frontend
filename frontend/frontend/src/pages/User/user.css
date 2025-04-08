@@ -1,0 +1,9 @@
+/* Add this to user.css */
+#main.user-main {
+  background-color: white;
+  margin-top: 60px;
+  padding: 20px 30px;
+  transition: all 0.3s;
+  min-height: 100vh;
+  color: black; /* optional */
+}

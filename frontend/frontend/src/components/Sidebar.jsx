@@ -6,21 +6,21 @@ const Sidebar = () => {
     <aside id="sidebar" className="sidebar">
       <ul className="sidebar-nav" id="sidebar-nav">
         <li className="nav-item">
-          <Link to="/" className="nav-link">
+          <Link to="/dashboard" className="nav-link">
             {" "}
             <i className="bi bi-grid"></i>
             <span>Dashboard</span>
           </Link>
         </li>
         <li className="nav-item">
-          <Link to="/" className="nav-link">
+          <Link to="/user" className="nav-link">
             {" "}
             <i class="bi bi-person"></i>
             <span>User</span>
           </Link>
         </li>
         <p className="topic">Inventory</p>
-        <hr />
+        {/* <hr /> */}
         <li className="nav-item">
           <Link to="/" className="nav-link">
             {" "}
