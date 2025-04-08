@@ -1,0 +1,36 @@
+.logo {
+  line-height: 1;
+  text-decoration: none;
+}
+
+@media (min-width: 120px) {
+  .logo {
+    width: 280px;
+  }
+}
+
+.logo img {
+  max-height: 26px;
+  margin-right: 6px;
+}
+
+.toggle-sidebar-btn {
+  color: white;
+}
+
+.logo span {
+  font-size: 26px;
+  font-weight: 700;
+  color: #e0e0e0;
+  margin-left: 50px;
+
+  font-family: "Nauito", sans-serif;
+}
+/* .logo img {
+  max-height: 26px;
+
+  margin-right: 50px;
+  margin-left: 50px;
+  cursor: pointer;
+  align-items: center;
+} */
