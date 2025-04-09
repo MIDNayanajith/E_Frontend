@@ -1,0 +1,92 @@
+.recent-sales {
+  margin-top: 30px;
+  background-color: #2a3447;
+  border: 2px solid #384256;
+  padding: 20px;
+  width: 100%;
+  color: white;
+  border-radius: 8px;
+}
+
+.recent-sales .card-body {
+  padding: 0 20px 20px 20px;
+}
+
+.recent-sales table {
+  --bs-table-bg: transparent;
+  --bs-table-color: #fff;
+  border-color: #495057;
+}
+
+.recent-sales .table thead th {
+  color: #cfd8dc !important;
+  background-color: #384256 !important;
+  border-bottom: 1px solid #495057;
+}
+
+.recent-sales .table tbody td,
+.recent-sales .table tbody th {
+  color: #fff !important;
+}
+
+.recent-sales .table tbody tr.highlight-row {
+  background-color: #384256 !important;
+  border-bottom: 1px solid #495057;
+}
+
+.recent-sales .table tbody tr:hover {
+  background: #fff !important;
+  color: #000 !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.recent-sales .table tbody tr:hover td,
+.recent-sales .table tbody tr:hover th {
+  color: #000 !important;
+}
+
+/* Badge styles */
+.badge {
+  display: inline-block;
+  padding: 0.35em 0.65em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+}
+
+.badge-success {
+  background-color: #28a745 !important;
+  color: #fff !important;
+}
+
+.badge-warning {
+  background-color: #ffc107 !important;
+  color: #000 !important;
+}
+
+.badge-danger {
+  background-color: #dc3545 !important;
+  color: #fff !important;
+}
+
+.badge-info {
+  background-color: #17a2b8 !important;
+  color: #fff !important;
+}
+
+/* Preserve badge colors on hover */
+.recent-sales .table tbody tr:hover .badge {
+  color: inherit !important;
+}
+
+/* Table cell spacing */
+.recent-sales .table td,
+.recent-sales .table th {
+  padding: 0.75rem;
+  vertical-align: middle;
+}
