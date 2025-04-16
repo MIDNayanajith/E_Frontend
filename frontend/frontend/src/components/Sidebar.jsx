@@ -22,7 +22,7 @@ const Sidebar = () => {
         <p className="topic">Inventory</p>
         {/* <hr /> */}
         <li className="nav-item">
-          <Link to="/" className="nav-link">
+          <Link to="/products" className="nav-link">
             {" "}
             <i class="bi bi-laptop"></i>
             <span>Products</span>

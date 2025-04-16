@@ -1,51 +1,50 @@
-import "./user.css";
 import Header from "../../components/Header";
 import Sidebar from "../../components/Sidebar";
 import PageTitle from "../../components/PageTitle/PageTitle";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-const User = () => {
-  const [user, setUser] = useState([]);
+
+const Products = () => {
+  const [items, setItem] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:8800/api/users/getUser")
-      .then((res) => setUser(res.data))
+      .get("http://localhost:8800/api/items/getItem")
+      .then((res) => setItem(res.data))
       .catch((err) => console.log(err));
   }, []);
-  const handleDelete = async (userId) => {
+
+  const handleDelete = async (ItemId) => {
     try {
       const confirmDelete = window.confirm(
-        "Are you sure you want to delete this user?"
+        "Are you sure you want to delete this product?"
       );
       if (!confirmDelete) return;
 
-      await axios.delete(`http://localhost:8800/api/users/delete/${userId}`);
+      await axios.delete(`http://localhost:8800/api/items/delete/${ItemId}`);
 
-      // Update the UI by filtering out the deleted user
-      setUser(user.filter((u) => u.id !== userId));
-      alert("User deleted successfully!");
+      setItem(items.filter((i) => i.id !== ItemId));
+      alert("Product Deleted Successfully!");
     } catch (err) {
-      console.error("Delete error:", err);
-      alert("Failed to delete user");
+      console.error("Delete error", err);
+      alert("Failed delete product!");
     }
   };
-
   return (
     <>
       <Header />
       <Sidebar />
-      <PageTitle page="User" pages={["User"]} icon="bi bi-house-up" />
+      <PageTitle page="Products" pages={["Products"]} icon="bi bi-house-up" />
       <main id="main" className="main user-main">
         <div className="container">
           <div className="col-md-12">
             <div className="card">
               <div className="card-header">
                 <h4>
-                  User List
-                  <Link to="/adduser" className="btn btn-primary float-end">
-                    Add User
+                  Product List
+                  <Link to="/addproducts" className="btn btn-primary float-end">
+                    Add Product
                   </Link>
                 </h4>
               </div>
@@ -54,41 +53,45 @@ const User = () => {
                   <thead>
                     <tr>
                       <th>#</th>
-                      <th>Profile</th>
+                      <th>Image</th>
                       <th>Name</th>
-                      <th>Email</th>
-                      <th>Role</th>
+                      <th>Category</th>
+                      <th>Selling Price</th>
+                      <th>Quantity</th>
+                      <th>Status</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {user.map((data, i) => (
+                    {items.map((data, i) => (
                       <tr key={i}>
                         <td>{data.id}</td>
                         <td>
                           <img
                             src={
-                              data.profile.startsWith("http")
-                                ? data.profile // if it's a full external link
-                                : `http://localhost:8800/uploads/user/${data.profile}` // if it's just a filename
+                              data.image.startsWith("http")
+                                ? data.image // if it's a full external link
+                                : `http://localhost:8800/uploads/products/${data.image}` // if it's just a filename
                             }
                             alt="Profile"
                             style={{
                               width: "35px",
                               height: "35px",
                               objectFit: "cover",
-                              borderRadius: "50%",
+                              borderRadius: "25%",
                             }}
                           />
                         </td>
-
+                        <td>{data.name}</td>
+                        <td>{data.category}</td>
+                        <td>{data.unit_price}</td>
+                        <td>{data.quantity}</td>
+                        <td>{data.status}</td>
                         <td>
-                          {data.first_name} {data.last_name}
-                        </td>
-                        <td>{data.email}</td>
-                        <td>{data.role}</td>
-                        <td>
-                          <Link to={`/edituser/${data.id}`} className="me-3">
+                          <Link
+                            to={`/editproducts/${data.id}`}
+                            className="me-3"
+                          >
                             <i
                               className="bi bi-pencil text-primary"
                               style={{ fontSize: "1.2rem", cursor: "pointer" }}
@@ -113,4 +116,4 @@ const User = () => {
   );
 };
 
-export default User;
+export default Products;
