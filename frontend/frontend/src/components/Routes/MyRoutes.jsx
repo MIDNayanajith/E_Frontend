@@ -5,6 +5,9 @@ import { Routes, Route } from "react-router-dom";
 import User from "../../pages/User/User";
 import AddUser from "../../pages/User/AddUser";
 import EditUser from "../../pages/User/EditUser";
+import Products from "../../pages/products/Products";
+import AddProduct from "../../pages/products/AddProduct";
+import EditProduct from "../../pages/products/EditProduct";
 
 function MyRoutes() {
   return (
@@ -14,6 +17,9 @@ function MyRoutes() {
       <Route path="/user" element={<User />} />
       <Route path="/adduser" element={<AddUser />} />
       <Route path="/edituser/:userId" element={<EditUser />} />
+      <Route path="/products" element={<Products />} />
+      <Route path="/addproducts" element={<AddProduct />} />
+      <Route path="/editproducts/:ItemId" element={<EditProduct />} />
     </Routes>
   );
 }
