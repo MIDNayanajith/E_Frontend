@@ -2,6 +2,7 @@ import "./App.css";
 //import bootstrap icons
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "remixicon/fonts/remixicon.css";
+import "react-toastify/dist/ReactToastify.css";
 
 //import bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
